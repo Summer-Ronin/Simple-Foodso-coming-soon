@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+   
+</head>
+<body>
+    <!-- Coming-soon-page -->
+    
+    <div id="main">
+        <div class="home-page">
+            <div class="img-background">    
+                <p class="text-coming-soon"><b>WE ARE COMING SOON</b> </p>
+                <i class="line-coming-soon"></i>
+                <hr>
+                <button class="btn-remider js-btn-remider"> Nhắc tôi khi sản phẩm sẵn sàng</button>
+              
+            </div>
+            
+            <div class="modal modal-js">
+                <div class="modal-container">
+                    <div class="btn-close-modal ti-close js-btn-close"></div>
+                    <div class="contact-page">
+                        <div class="contact-container">
+                            <div class="contact-heading text-center">Liên hệ</div>
+                            <div class="row contact-infor">
+                                <div class="col col-half">
+                                    <p><i class="ti-location-pin icon-contact"></i>Nguyễn Hữu Thọ, Quận 7. TP HCM</p>
+                                    <p><i class="ti-mobile  icon-contact"></i>Mr.Nhựt: 0123456789</p>
+                                    <p><i class="ti-email  icon-contact"></i><span>foodnhutthanh@gmail.com</span></p>
+
+                                </div>
+
+                                <div class="col col-half">
+                                  <p class="Note-for-contact"><h2>Hãy điền đầy đủ các thông tin sau!</h2>
+                                    Khi sản phẩm sẵn sàng, chúng tôi sẽ liên lạc với bạn qua thông tin sau</p>
+                                    <br>
+                                </div>  
+
+                                <div class="col col-half">
+                                    <form action="">
+                                        <input type="text" name="" placeholder="Họ và tên" id="" required class="form-control">
+                                        <input type="text" name="" placeholder= "Email" id="" required class="form-control">
+                                        <br>
+                                        <button class="btn-send-infor">Gửi</button>
+                                    </form>
+                               </div> 
+                               <div class="clear"></div> 
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>                   
+                </div> 
+            </div>
+        </div>
+    </div>
+    <script>
+        const btnRemider = document.querySelector('.js-btn-remider');
+        const modal = document.querySelector('.modal-js');
+        const btnClose = document.querySelector('.js-btn-close')
+
+        function showModal() {
+
+            modal.classList.add('open')
+        }
+
+        function hidenModal () {
+            modal.classList.remove('open')
+        }
+
+        btnRemider.addEventListener('click',showModal)
+
+        btnClose.addEventListener('click', hidenModal)
+    </script>
+</body>
+</html>
