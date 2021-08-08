@@ -1,82 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/assets/font/themify-icons/themify-icons.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
-   
-</head>
-<body>
-    <!-- Coming-soon-page -->
-    
-    <div id="main">
-        <div class="home-page">
-            <div class="img-background">    
-                <p class="text-coming-soon"><b>WE ARE COMING SOON</b> </p>
-                <i class="line-coming-soon"></i>
-                <hr>
-                <button class="btn-remider js-btn-remider"> Nhắc tôi khi sản phẩm sẵn sàng</button>
-              
-            </div>
-            
-            <div class="modal modal-js">
-                <div class="modal-container">
-                    <div class="btn-close-modal ti-close js-btn-close"></div>
-                    <div class="contact-page">
-                        <div class="contact-container">
-                            <div class="contact-heading text-center">Liên hệ</div>
-                            <div class="row contact-infor">
-                                <div class="col col-half">
-                                    <p><i class="ti-location-pin icon-contact"></i>Nguyễn Hữu Thọ, Quận 7. TP HCM</p>
-                                    <p><i class="ti-mobile  icon-contact"></i>Mr.Nhựt: 0123456789</p>
-                                    <p><i class="ti-email  icon-contact"></i><span>foodnhutthanh@gmail.com</span></p>
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<title>FoodSo - Coming soon</title>
+		<meta content="" name="description" />
+		<meta content="" name="keywords" />
 
-                                </div>
+		<!-- Favicons -->
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon-96x96.png">
+		<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-                                <div class="col col-half">
-                                  <p class="Note-for-contact"><h2>Hãy điền đầy đủ các thông tin sau!</h2>
-                                    Khi sản phẩm sẵn sàng, chúng tôi sẽ liên lạc với bạn qua thông tin sau</p>
-                                    <br>
-                                </div>  
+		<!-- Google Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i"
+			rel="stylesheet"
+		/>
 
-                                <div class="col col-half">
-                                    <form action="">
-                                        <input type="text" name="" placeholder="Họ và tên" id="" required class="form-control">
-                                        <input type="text" name="" placeholder= "Email" id="" required class="form-control">
-                                        <br>
-                                        <button class="btn-send-infor">Gửi</button>
-                                    </form>
-                               </div> 
-                               <div class="clear"></div> 
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="clear"></div>
-                    </div>                   
-                </div> 
-            </div>
-        </div>
-    </div>
-    <script>
-        const btnRemider = document.querySelector('.js-btn-remider');
-        const modal = document.querySelector('.modal-js');
-        const btnClose = document.querySelector('.js-btn-close')
+		<!-- Vendor CSS Files -->
+		<link
+			href="assets/vendor/bootstrap/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+			rel="stylesheet"
+		/>
 
-        function showModal() {
+		<!-- Template Main CSS File -->
+		<link href="assets/css/style.css" rel="stylesheet" />
 
-            modal.classList.add('open')
-        }
+	</head>
 
-        function hidenModal () {
-            modal.classList.remove('open')
-        }
+	<body>
+		<!-- ======= Header ======= -->
+		<header id="header" class="d-flex align-items-center">
+			<div class="container d-flex flex-column align-items-center">
+				<h1><img src="./assets/img/main-logo.png" alt="" /></h1>
+				<h2>We are coming soon...</h2>
+				<!-- <div
+					class="countdown d-flex justify-content-center"
+					data-count="2021/12/5"
+				>
+					<div>
+						<h3>%d</h3>
+						<h4>Days</h4>
+					</div>
+					<div>
+						<h3>%h</h3>
+						<h4>Hours</h4>
+					</div>
+					<div>
+						<h3>%m</h3>
+						<h4>Minutes</h4>
+					</div>
+					<div>
+						<h3>%s</h3>
+						<h4>Seconds</h4>
+					</div>
+				</div> -->
 
-        btnRemider.addEventListener('click',showModal)
+				<div class="subscribe" style="margin: 30px 0">
+					<h4>
+						Chúng tôi sẽ thông báo cho bạn khi website hoạt động
+					</h4>
+					<form
+						method="post"
+						role="form"
+						class="php-email-form"
+						id="myform"
+					>
+						<div class="subscribe-form">
+							<input
+								type="email"
+								name="email"
+								class="form form-control"
+								id="email"
+								required
+							/>
+							<input
+								type="submit"
+								id="submitButton"
+								onclick="formSubmit()"
+							/>
+						</div>
+						<div class="mt-2">
+							<div class="loading">Loading</div>
+							<div class="error-message"></div>
+							<div class="sent-message">
+								Cảm ơn vì đã giữ liên lạc, FoodSo sẽ báo cho bạn khi sản phẩm sẵn sàng
+							</div>
+						</div>
+					</form>
+				</div>
 
-        btnClose.addEventListener('click', hidenModal)
-    </script>
-</body>
+				<div class="social-links text-center">
+					<a href="#" class="twitter"
+						><i class="bi bi-twitter"></i
+					></a>
+					<a href="#" class="facebook"
+						><i class="bi bi-facebook"></i
+					></a>
+					<a href="#" class="instagram"
+						><i class="bi bi-instagram"></i
+					></a>
+					<a href="#" class="linkedin"
+						><i class="bi bi-linkedin"></i
+					></a>
+				</div>
+			</div>
+		</header>
+		<!-- End #header -->
+
+		<main id="main">
+			<!-- ======= About Us Section ======= -->
+			<section id="about" class="about">
+				<div class="container">
+					<div class="row content">
+						<div
+							class="col-lg-6"
+							style="
+								vertical-align: middle !important;
+								margin: 0 auto;
+							"
+						>
+							<h2>FoodSo - Đặc sản Việt Nam</h2>
+							<h3>
+								Nơi hội tụ của các đặc sản các vùng miền trên tổ
+								quốc
+							</h3>
+						</div>
+						<div class="col-lg-6 pt-4 pt-lg-0">
+							<img
+								src="./assets/img/another_background.jpg"
+								alt=""
+								width="100%"
+							/>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End About Us Section -->
+
+			<!-- ======= Contact Us Section ======= -->
+			<section id="contact" class="contact" id="subscribe">
+				<div class="container">
+					<div class="section-title">
+						<h2>Liên hệ</h2>
+					</div>
+
+					<div class="row justify-content-center">
+						<div class="col-lg-10">
+							<div class="info-wrap">
+								<div class="row">
+									<div class="col-lg-4 info">
+										<i class="bi bi-geo-alt"></i>
+										<h4>Địa chỉ:</h4>
+										<p>
+											<a
+												href="https://goo.gl/maps/coUv1zmRxBE4wA7C9"
+												target="blank"
+												>67 Nguyễn Thị Minh Khai, quận
+												1, TP.HCM</a
+											>
+										</p>
+									</div>
+
+									<div class="col-lg-4 info mt-4 mt-lg-0">
+										<i class="bi bi-envelope"></i>
+										<h4>Email:</h4>
+										<p>
+											<a
+												href="mailto:sueh.qt.ueh@gmail.com"
+												>sueh.qt.ueh@gmail.com</a
+											>
+										</p>
+									</div>
+
+									<div class="col-lg-4 info mt-4 mt-lg-0">
+										<i class="bi bi-phone"></i>
+										<h4>Điện thoại:</h4>
+										<p>
+											<a href="tel:0859302535"
+												>0859302535</a
+											>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- <div class="row justify-content-center">
+						<div class="col-lg-10">
+							<form
+								action="forms/contact.php"
+								method="post"
+								role="form"
+								class="php-email-form"
+							>
+								<div class="row">
+									<div class="col-md-6 form-group">
+										<input
+											type="text"
+											name="name"
+											class="form-control"
+											id="name"
+											placeholder="Your Name"
+											required
+										/>
+									</div>
+									<div
+										class="col-md-6 form-group mt-3 mt-md-0"
+									>
+										<input
+											type="email"
+											class="form-control"
+											name="email"
+											id="email"
+											placeholder="Your Email"
+											required
+										/>
+									</div>
+								</div>
+								<div class="form-group mt-3">
+									<input
+										type="text"
+										class="form-control"
+										name="subject"
+										id="subject"
+										placeholder="Subject"
+										required
+									/>
+								</div>
+								<div class="form-group mt-3">
+									<textarea
+										class="form-control"
+										name="message"
+										rows="5"
+										placeholder="Message"
+										required
+									></textarea>
+								</div>
+								<div class="my-3">
+									<div class="loading">Loading</div>
+									<div class="error-message"></div>
+									<div class="sent-message">
+										Your message has been sent. Thank you!
+									</div>
+								</div>
+								<div class="text-center">
+									<button type="submit">Send Message</button>
+								</div>
+							</form>
+						</div>
+					</div> -->
+				</div>
+			</section>
+			<!-- End Contact Us Section -->
+		</main>
+		<!-- End #main -->
+
+		<!-- ======= Footer ======= -->
+		<footer id="footer">
+			<div class="container">
+				<div class="copyright">
+					&copy; Copyright <strong><span>FoodSo</span></strong
+					>. All Rights Reserved
+				</div>
+				<div class="credits">
+					<!-- All the links in the footer should remain intact. -->
+					<!-- You can delete the links only if you purchased the pro version. -->
+					<!-- Licensing information: https://bootstrapmade.com/license/ -->
+					<!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/comingsoon-free-html-bootstrap-template/ -->
+					Designed by
+					<a href="https://sueh.org/" target="blank">SUEH</a>
+				</div>
+			</div>
+		</footer>
+		<!-- End #footer -->
+
+		<a
+			href="#"
+			class="back-to-top d-flex align-items-center justify-content-center"
+			><i class="bi bi-arrow-up-short"></i
+		></a>
+
+		<!-- Vendor JS Files -->
+		<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+		<!--Jquery-->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+			integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+
+		<!-- Template Main JS File -->
+		<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
