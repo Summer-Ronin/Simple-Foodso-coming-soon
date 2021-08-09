@@ -118,9 +118,21 @@
 			submitForm("https://api.apispreadsheets.com/data/16658/");
             
             // send a waiting email to client
-            $.post(`https://foodsomailing-api.herokuapp.com/sendMail/${client_email}`, function( data ) {
-                console.log('OK')
-            });
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", `https://foodsomailing-api.herokuapp.com/sendMail/${client_email}`, true);
+
+            //Send the proper header information along with the request
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            xhr.onreadystatechange = function() { // Call a function when the state changes.
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    // Request finished. Do processing here.
+                }
+            }
+            xhr.send("foo=bar&lorem=ipsum");
+            // xhr.send(new Int8Array());
+            // xhr.send(document);
+
 		} else {
 			$(".error-message").css("display", "block");
 			$(".error-message").text("Vui lòng hãy nhập email của bạn");
