@@ -1,8 +1,8 @@
 {
 	"rewrites": [
 		{
-			"source": "/sendMail/(*.)",
-			"destination": "https://foodsomailing-api.herokuapp.com/sendMail/(*.)"
+			"source": "/sendMail",
+			"destination": "https://foodsomailing-api.herokuapp.com/sendMail"
 		}
 	],
 	"headers": [
