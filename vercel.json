@@ -1,5 +1,5 @@
 {
-	"redirects": [
+	"rewrites": [
 		{
 			"source": "/sendMail",
 			"destination": "https://foodsomailing-api.herokuapp.com/sendMail"
