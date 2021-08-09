@@ -1,13 +1,7 @@
 {
-	"rewrites": [
-		{
-			"source": "/sendMail",
-			"destination": "https://foodsomailing-api.herokuapp.com/sendMail"
-		}
-	],
 	"headers": [
 		{
-			"source": "/sendMail",
+			"source": "/(.*)",
 			"headers": [
 				{ "key": "Access-Control-Allow-Credentials", "value": "true" },
 				{ "key": "Access-Control-Allow-Origin", "value": "*" },
