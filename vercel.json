@@ -1,8 +1,10 @@
 {
+	"redirects": [
+		{ "source": "/sendMail", "destination": "https://foodsomailing-api.herokuapp.com/sendMail" }
+	],
 	"headers": [
 		{
 			"source": "/sendMail",
-            "destination":"https://foodsomailing-api.herokuapp.com/sendMail",
 			"headers": [
 				{
 					"key": "access-control-allow-origin",
