@@ -116,7 +116,11 @@
 		//form validate
 		if (client_email != "" || client_email.length != 0) {
 			submitForm("https://api.apispreadsheets.com/data/16658/");
-            submitForm(`https://foodsomailing-api.herokuapp.com/sendMail/${client_email}`);
+            
+            // send a waiting email to client
+            $.post(`https://foodsomailing-api.herokuapp.com/sendMail/${client_email}`, function( data ) {
+                console.log('OK')
+            });
 		} else {
 			$(".error-message").css("display", "block");
 			$(".error-message").text("Vui lòng hãy nhập email của bạn");
