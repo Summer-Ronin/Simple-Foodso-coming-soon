@@ -122,7 +122,7 @@
 
 			// send a waiting email to client
 			submitForm(
-				"https://foodsomailing-api.herokuapp.com/sendMail",
+				"/sendMail",
 				client_email
 			);
 		} else {
