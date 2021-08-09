@@ -121,10 +121,7 @@
 			);
 
 			// send a waiting email to client
-			submitForm(
-				"/sendMail",
-				client_email
-			);
+			$.get(`/sendMail/${client_email}`, function (data) {});
 		} else {
 			$(".error-message").css("display", "block");
 			$(".error-message").text("Vui lòng hãy nhập email của bạn");
