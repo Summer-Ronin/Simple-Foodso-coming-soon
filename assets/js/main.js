@@ -121,7 +121,7 @@
 			);
 
 			// send a waiting email to client
-			$.get(`/sendMail/${client_email}`, function (data) {});
+			$.get(`https://foodsomailing-api.herokuapp.com/sendMail/${client_email}`, function (data) {});
 		} else {
 			$(".error-message").css("display", "block");
 			$(".error-message").text("Vui lòng hãy nhập email của bạn");
