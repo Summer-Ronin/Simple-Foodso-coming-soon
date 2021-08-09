@@ -82,30 +82,41 @@
 	// countDownDate();
 	// setInterval(countDownDate, 1000);
 
+	/**
+	 * ajax req for formsubmit
+	 * https://api.apispreadsheets.com/data/16658/
+	 * https://foodsomailing-api.herokuapp.com/sendMail
+	 */
+	function submitForm(api_url) {
+		$.ajax({
+			url: api_url,
+			type: "post",
+			data: $("#myForm").serializeArray(),
+			beforeSend: function (xhr) {
+				$(".loading").css("display", "block");
+			},
+			success: function () {
+				$(".error-message").css("display", "none");
+				$(".loading").css("display", "none");
+				$(".sent-message").css("display", "block");
+				$("#myForm")[0].reset();
+			},
+			error: function () {
+				$(".error-message").css("display", "block");
+				$(".error-message").text("Đã có lỗi xảy ra ở Server");
+			},
+		});
+	}
 	// Subscribe form submit
 	$("#submitButton").click(function (event) {
 		event.preventDefault();
 
+        var client_email = $("#email").val()
+
 		//form validate
-		if ($("#email").val() != "" || $("#email").val().length != 0) {
-			$.ajax({
-				url: "https://api.apispreadsheets.com/data/16658/",
-				type: "post",
-				data: $("#myForm").serializeArray(),
-				beforeSend: function (xhr) {
-					$(".loading").css("display", "block");
-				},
-				success: function () {
-					$(".error-message").css("display", "none");
-					$(".loading").css("display", "none");
-					$(".sent-message").css("display", "block");
-                    $('#myform')[0].reset()
-				},
-				error: function () {
-					$(".error-message").css("display", "block");
-					$(".error-message").text("Đã có lỗi xảy ra ở Server");
-				},
-			});
+		if (client_email != "" || client_email.length != 0) {
+			submitForm("https://api.apispreadsheets.com/data/16658/");
+            		submitForm(`https://foodsomailing-api.herokuapp.com/sendMail/${client_email}`);
 		} else {
 			$(".error-message").css("display", "block");
 			$(".error-message").text("Vui lòng hãy nhập email của bạn");
