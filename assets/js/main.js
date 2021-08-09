@@ -87,11 +87,11 @@
 	 * https://api.apispreadsheets.com/data/16658/
 	 * https://foodsomailing-api.herokuapp.com/sendMail
 	 */
-	function submitForm(api_url) {
+	function submitForm(api_url, data) {
 		$.ajax({
 			url: api_url,
 			type: "post",
-			data: $("#myForm").serializeArray(),
+			data: data,
 			beforeSend: function (xhr) {
 				$(".loading").css("display", "block");
 			},
@@ -111,28 +111,20 @@
 	$("#submitButton").click(function (event) {
 		event.preventDefault();
 
-        var client_email = $("#email").val()
+		var client_email = $("#email").val();
 
 		//form validate
 		if (client_email != "" || client_email.length != 0) {
-			submitForm("https://api.apispreadsheets.com/data/16658/");
-            
-            // send a waiting email to client
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", `https://foodsomailing-api.herokuapp.com/sendMail/${client_email}`, true);
+			submitForm(
+				"https://api.apispreadsheets.com/data/16658/",
+				$("#myForm").serializeArray()
+			);
 
-            //Send the proper header information along with the request
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-            xhr.onreadystatechange = function() { // Call a function when the state changes.
-                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-                    // Request finished. Do processing here.
-                }
-            }
-            xhr.send("foo=bar&lorem=ipsum");
-            // xhr.send(new Int8Array());
-            // xhr.send(document);
-
+			// send a waiting email to client
+			submitForm(
+				"https://foodsomailing-api.herokuapp.com/sendMail",
+				client_email
+			);
 		} else {
 			$(".error-message").css("display", "block");
 			$(".error-message").text("Vui lòng hãy nhập email của bạn");
