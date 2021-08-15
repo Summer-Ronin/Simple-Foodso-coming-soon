@@ -1,8 +1,3 @@
-/**
- * Template Name: ComingSoon - v4.3.0
- * Author: BootstrapMade.com
- * Editor: The summer ronins
- */
 (function () {
 	"use strict";
 
